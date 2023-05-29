@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExtractTheVowels.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+             <Label
+                Text="Extract Vowels"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Enter a word"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Enter a word to extract the vowels."
+                FontSize="18"
+                VerticalTextAlignment="Center"
+                HorizontalOptions="Center" />
+
+            <!-- input field for word-->            
+            <Frame
+                BorderColor="Black"
+                >
+                <Entry
+                x:Name="entry"
+                Placeholder="Enter a word"
+                FontSize="16"
+                ReturnType="Done"
+                VerticalTextAlignment="Center"
+                />
+                </Frame>
+
+            <!-- displays error message if the input field is empty-->            
+             <Label
+                x:Name= "errorMsg"
+                IsVisible = "False"
+                Text="Word field should not be empty."
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Word field should not be empty."
+                FontSize="12"
+                TextColor = "Red"
+                VerticalTextAlignment="Start"
+                HorizontalOptions="Start" />
+
+            <!-- btn for extracting the vowel letters from a word-->
+            <Button
+                x:Name="Extractbtn"
+                Text="Extract"
+                SemanticProperties.Hint="Extract vowel letters from user input."
+                Clicked="onExtractBtnClicked"
+                HorizontalOptions="Center" />
+
+            <!-- displays result message-->            
+            <Label
+                x:Name="resultMsg"
+                Text="The vowels in the word are: "
+                IsVisible="False"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Result of a vowel letters."
+                FontSize="18"
+                VerticalTextAlignment="Center"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
+
